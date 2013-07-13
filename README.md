@@ -1,6 +1,6 @@
 # def.me
 
-A Clojure library designed to ... well, that part is up to you.
+Sometimes you just have to define things... 
 
 ## Usage
 

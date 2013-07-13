@@ -11,7 +11,9 @@
 
 (defmacro def-let [sexp prefix]
   (let [defs (map second (partition 2 (second sexp)))]
-    `(do     
-       ~@(for [c (range (count defs))]           
-           (create-def defs prefix c))
-       ~sexp)))
+    `(do
+       (~(first sexp)
+        ~(second sexp)
+        ~@(for [c (range (count defs))]           
+            (create-def defs prefix c))
+        ~@(rest (rest sexp))))))
